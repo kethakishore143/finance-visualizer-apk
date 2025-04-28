@@ -1,7 +1,7 @@
 
 const Transaction = require("../models/Transaction");
 
-// Get all transactions
+
 const getTransactions = async (req, res) => {
   try {
     const transactions = await Transaction.find().sort({ createdAt: -1 });
@@ -12,7 +12,6 @@ const getTransactions = async (req, res) => {
   }
 };
 
-// Add a new transaction
 const addTransaction = async (req, res) => {
   try {
     const { amount, description, category, date } = req.body;
@@ -29,7 +28,8 @@ const addTransaction = async (req, res) => {
   }
 };
 
-// Delete a transaction
+
+
 const deleteTransaction = async (req, res) => {
   try {
     const transaction = await Transaction.findById(req.params.id);
